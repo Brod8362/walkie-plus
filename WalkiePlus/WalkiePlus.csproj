@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>net35</TargetFramework>
+        <TargetFramework>net48</TargetFramework>
         <AssemblyName>WalkiePlus</AssemblyName>
         <Description>My first plugin</Description>
         <Version>1.0.0</Version>
@@ -16,10 +16,11 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="BepInEx.Analyzers" Version="1.*" PrivateAssets="all"/>
-        <PackageReference Include="BepInEx.Unity.Mono" Version="6.0.0-be.*" IncludeAssets="compile"/>
-        <PackageReference Include="BepInEx.PluginInfoProps" Version="2.*"/>
-        <PackageReference Include="UnityEngine.Modules" Version="5.6.0" IncludeAssets="compile"/>
+        <PackageReference Include="BepInEx.Analyzers" Version="1.*" PrivateAssets="all" />
+        <PackageReference Include="BepInEx.Core" Version="5.*" />
+        <PackageReference Include="BepInEx.PluginInfoProps" Version="1.*" />
+        <PackageReference Include="UnityEngine.Modules" Version="5.6.0" IncludeAssets="compile" />
+        <PackageReference Include="Unity3D.UnityEngine.UI" Version="2018.3.5.1" />
     </ItemGroup>
 
     <ItemGroup>
@@ -33,7 +34,6 @@
         <Reference Include="Unity.TextMeshPro">
           <HintPath>gamedata/Unity.TextMeshPro.dll</HintPath>
         </Reference>
-        <!-- Transient dependencies -->
     </ItemGroup>
 
     <ItemGroup Condition="'$(TargetFramework.TrimEnd(`0123456789`))' == 'net'">
