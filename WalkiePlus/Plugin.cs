@@ -20,5 +20,12 @@ public class Plugin : BaseUnityPlugin
             harmony.Patch(methodOrig, new HarmonyMethod(methodPatch));
             Logger.LogInfo("Compass updater loaded!");
         }
+        
+        {
+            MethodInfo methodOrig = AccessTools.Method(typeof(HUDManager), "Update");
+            MethodInfo methodPatch = AccessTools.Method(typeof(ShipCameraRotationPatch), "Update");
+            harmony.Patch(methodOrig, new HarmonyMethod(methodPatch));
+            Logger.LogInfo("Ship camera rotation patch loaded!");
+        }
     }
 }
