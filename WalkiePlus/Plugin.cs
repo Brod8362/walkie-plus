@@ -10,5 +10,13 @@ public class Plugin : BaseUnityPlugin
     {
         // Plugin startup logic
         Logger.LogInfo($"Plugin {MyPluginInfo.PLUGIN_GUID} is loaded!");
+        // Harmony harmony = new Harmony(MyPluginInfo.PLUGIN_GUID);
+        //
+        // {
+        //     MethodInfo methodOrig = AccessTools.Method(typeof(HUDManager), "Update");
+        //     MethodInfo methodPatch = AccessTools.Method(typeof(CompassUpdater), "Update");
+        //     harmony.Patch(methodOrig, new HarmonyMethod(methodPatch));
+        //     Logger.LogInfo("Compass updater loaded!");
+        // }
     }
 }

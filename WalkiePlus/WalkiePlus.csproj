@@ -22,6 +22,20 @@
         <PackageReference Include="UnityEngine.Modules" Version="5.6.0" IncludeAssets="compile"/>
     </ItemGroup>
 
+    <ItemGroup>
+        <!-- Game Assemblies -->
+        <Reference Include="Assembly-CSharp">
+            <HintPath>gamedata/Assembly-CSharp.dll</HintPath>
+        </Reference>
+        <Reference Include="Assembly-CSharp-firstpass">
+            <HintPath>gamedata/Assembly-CSharp-firstpass.dll</HintPath>
+        </Reference>
+        <Reference Include="Unity.TextMeshPro">
+          <HintPath>gamedata/Unity.TextMeshPro.dll</HintPath>
+        </Reference>
+        <!-- Transient dependencies -->
+    </ItemGroup>
+
     <ItemGroup Condition="'$(TargetFramework.TrimEnd(`0123456789`))' == 'net'">
         <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.2" PrivateAssets="all"/>
     </ItemGroup>
