@@ -1,5 +1,6 @@
 extern alias CoreModuleDuplicate;
 using System;
+using System.Linq;
 using CoreModuleDuplicate::UnityEngine;
 using GameNetcodeStuff;
 using TMPro;
@@ -24,9 +25,10 @@ public class CompassUpdater
         if (compassParent is null)
             return;
 
-        bool playerHoldingRadio = true;
         
-        if (playerHoldingRadio)
+        GrabbableObject heldObject = playerController.ItemSlots[playerController.currentItemSlot];
+         
+        if (heldObject is WalkieTalkie && heldObject.isBeingUsed)
         {
             GameObject textContainer = GameObject.Find(
                 "Systems/UI/Canvas/IngamePlayerHUD/TopLeftCorner/Compass/Container/CardinalDirections/North"
@@ -43,6 +45,7 @@ public class CompassUpdater
             //results of this are 0, 90, 180, 270
             int snappedAngleIndex = snappedAngle / 90;
             directionText.text = Directions[snappedAngleIndex];
+            compassParent.SetActive(true);
         }
         else
         {
