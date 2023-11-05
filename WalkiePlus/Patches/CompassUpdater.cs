@@ -46,6 +46,10 @@ public class CompassUpdater
             int snappedAngleIndex = snappedAngle / 90;
             directionText.text = Directions[snappedAngleIndex];
             compassParent.SetActive(true);
+            if (HUDManager.Instance is not null)
+            {
+                HUDManager.Instance.SetClockVisible(true);
+            }
         }
         else
         {
